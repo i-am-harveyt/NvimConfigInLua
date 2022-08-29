@@ -1,0 +1,21 @@
+local o = vim.opt
+
+o.termguicolors = true
+o.mouse = 'a'
+o.encoding = 'utf-8'
+o.backup = false
+o.writebackup = false
+o.smarttab = true
+o.timeout = true
+o.timeoutlen = 100
+o.updatetime = 50
+o.showcmd = true
+o.smartindent = true
+vim.cmd('set expandtab')
+o.shiftwidth = 4
+o.tabstop = 4
+o.nu = true
+o.rnu = true
+o.clipboard = "unnamedplus"
+o.guifont = '*'
+
