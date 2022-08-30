@@ -8,4 +8,6 @@ require("modules.nvimtree")
 require("modules.whichkey")
 require("modules.telescope")
 require("modules.comment")
+require("modules.impatient")
+require("modules.gitsigns")
 

@@ -77,7 +77,13 @@ packer.startup(function(use)
       config = function ()
         require("nvim-autopairs").setup {}
       end
-  }
+    }
+
+    -- impatient, to make loading faster
+    use { 'lewis6991/impatient.nvim' }
+
+    -- gitsigns
+    use { 'lewis6991/gitsigns.nvim' }
 
 end)
 

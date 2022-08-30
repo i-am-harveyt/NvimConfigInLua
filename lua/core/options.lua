@@ -1,6 +1,7 @@
 local o = vim.opt
 
 o.termguicolors = true
+o.background = 'dark'
 o.mouse = 'a'
 o.encoding = 'utf-8'
 o.backup = false
