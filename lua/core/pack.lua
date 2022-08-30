@@ -16,6 +16,9 @@ packer.startup(function(use)
     -- colorscheme
     use { "EdenEast/nightfox.nvim" }
 
+    -- comment
+    use { "numToStr/Comment.nvim" }
+
     -- Configurations for Nvim LSP
     use { 'neovim/nvim-lspconfig' }
 
@@ -43,15 +46,11 @@ packer.startup(function(use)
     -- plenary
     use { "nvim-lua/plenary.nvim" }
 
+    -- popup
+    use { 'nvim-lua/popup.nvim' }
+
     -- telescope-fzf
-    use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
-        requires = { {'nvim-lua/plenary.nvim'} }
-    }
-    use {
-        'nvim-telescope/telescope-fzf-native.nvim',
-        run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
-    }
+    use { "nvim-telescope/telescope.nvim" }
 
     -- Which Key
     use {

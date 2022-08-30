@@ -5,5 +5,6 @@ require("modules.dashboard")
 require("modules.lualine")
 require("modules.mason")
 require("modules.nvimtree")
+require("modules.whichkey")
 require("modules.telescope")
 
