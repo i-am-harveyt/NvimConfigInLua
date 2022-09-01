@@ -85,8 +85,40 @@ packer.startup(function(use)
     -- gitsigns
     use { 'lewis6991/gitsigns.nvim' }
 
+    -- treesitter
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function ()
+            require('nvim-treesitter.install').update(
+            { with_sync = true }
+            )
+        end
+    }
+
+    -- trouble
+    use {
+      "folke/trouble.nvim",
+      requires = "kyazdani42/nvim-web-devicons",
+    }
+
+    --nvim-web-devicons
+    use { 'kyazdani42/nvim-web-devicons' }
+
 end)
 
-return packer
+local wk_status, wk = pcall(require, "which-key")
+if not wk_status then
+    return packer
+end
+wk.register({
+  P = {
+      name = "+Packer",
+      S = { "<Cmd>PackerSync<CR>", "Sync" },
+      s = { "<Cmd>PackerStatus<CR>", "Status" },
+      u = { "<Cmd>PackerUpdate<CR>", "Update" },
+      c = { "<Cmd>PackerClean<CR>", "Clean" },
+  },
+}, { prefix = "<Leader>" })
 
+return packer
 

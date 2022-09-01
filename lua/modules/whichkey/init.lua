@@ -83,7 +83,6 @@ local opts = {
 
 local mappings = {
   ["<Leader>Q"] = { "<Cmd>quit!<CR>", "Quit" },
-  ["<Leader>e"] = { "<Cmd>NvimTreeToggle<CR>", "explorer" },
   ["<Leader>f"] = {
     name = "+file",
     s = { "<Cmd>write!<CR>", "Save" },
@@ -101,44 +100,6 @@ local mappings = {
       d = { "<Cmd>bdelete<CR>", "Delete-buffer" },
       n = { "<Cmd>bnext<CR>", "Next-buffer" },
       p = { "<Cmd>bprevious<CR>", "Previous-buffer" },
-  },
-  ["<Leader>l"] = {
-      name = "+LSP",
-      a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-      d = {
-        "<cmd>Telescope diagnostics<cr>",
-        "Document Diagnostics",
-      },
-      -- w = {
-      --   "<cmd>Telescope lsp_workspace_diagnostics<cr>",
-      --   "Workspace Diagnostics",
-      -- },
-      -- f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
-      i = { "<cmd>LspInfo<cr>", "Info" },
-      I = { "<cmd>Mason<cr>", "Installer Info" },
-      j = {
-        "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
-        "Next Diagnostic",
-      },
-      k = {
-        "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
-        "Prev Diagnostic",
-      },
-      -- l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-      q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
-      r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-    },
-  ["<Leader>P"] = {
-      name = "+Packer",
-      S = { "<Cmd>PackerSync<CR>", "Sync" },
-      s = { "<Cmd>PackerStatus<CR>", "Status" },
-      u = { "<Cmd>PackerUpdate<CR>", "Update" },
-      c = { "<Cmd>PackerClean<CR>", "Clean" },
-  },
-  ["<Leader>T"] = {
-      name = "+NvimTree",
-      r = { "<Cmd>NvimTreeRefresh<CR>", "refresh" },
-      t = { "<Cmd>NvimTreeToggle<CR>", "toggle" },
   },
   ["<Leader>w"] = {
       name = "+window",

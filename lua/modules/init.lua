@@ -10,4 +10,7 @@ require("modules.telescope")
 require("modules.comment")
 require("modules.impatient")
 require("modules.gitsigns")
+require("modules.treesitter")
+require("modules.trouble")
+require("modules.devicons")
 
