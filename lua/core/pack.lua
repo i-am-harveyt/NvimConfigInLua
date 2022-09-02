@@ -104,6 +104,12 @@ packer.startup(function(use)
     --nvim-web-devicons
     use { 'kyazdani42/nvim-web-devicons' }
 
+    -- toggle term
+    use {
+        "akinsho/toggleterm.nvim",
+        tag = 'v2.*',
+    }
+
 end)
 
 local wk_status, wk = pcall(require, "which-key")

@@ -13,4 +13,5 @@ require("modules.gitsigns")
 require("modules.treesitter")
 require("modules.trouble")
 require("modules.devicons")
+require("modules.toggleterm")
 
