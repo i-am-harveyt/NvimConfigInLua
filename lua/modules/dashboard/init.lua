@@ -5,8 +5,8 @@ local db = require('dashboard')
 db.preview_command = 'cat' -- for macOS
 --
 db.preview_file_path = home .. '/.config/nvim/static/neovim.cat'
-db.preview_file_height = 21 
-db.preview_file_width = 75
+db.preview_file_height = 21
+db.preview_file_width = 50
 db.custom_center = {
     {icon = '  ',
     desc = 'Recently latest session                 ',
