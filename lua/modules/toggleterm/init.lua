@@ -11,13 +11,15 @@ if not wk_status then
   return
 end
 wk.register({
-  name = "ToggleTerminal",
-  h = {
-    "<Cmd>ToggleTerm size=7 direction=horizontal<CR>",
-    "horizontally"
-  },
-  f = {
-    "<Cmd>ToggleTerm size=5 direction=float<CR>",
-    "float"
-  },
-}, { prefix = "<C-t>" })
+  t = {
+    name = "ToggleTerminal",
+    h = {
+      "<Cmd>ToggleTerm size=9 direction=horizontal<CR>",
+      "horizontally"
+    },
+    f = {
+      "<Cmd>ToggleTerm size=5 direction=float<CR>",
+      "float"
+    },
+  }
+}, { prefix = "<Leader>" })

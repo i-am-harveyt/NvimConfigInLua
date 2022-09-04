@@ -87,13 +87,6 @@ local mappings = {
     name = "+file",
     s = { "<Cmd>write!<CR>", "Save" },
   },
-  ["<Leader>t"] = {
-      name = "+tab",
-      N = { "<Cmd>tabnew<CR>", "New-tab" },
-      c = { "<Cmd>tabclose<CR>", "Tab-close" },
-      n = { "<Cmd>tabnext<CR>", "Tab-next" },
-      p = { "<Cmd>tabprevious<CR>", "Tab-previous" },
-  },
  ["<Leader>b"] = {
       name = "+buffer",
       N = { "<Cmd>enew<CR>", "New-buffer" },
@@ -115,11 +108,7 @@ local mappings = {
           h = { "<C-w>h", "Horizontally-split" },
       },
   },
-  ["<Leader>;"] = {
-      name = "+other",
-      s = { "<Cmd>source %<CR>", "source %" },
-      t = { "<Cmd>term<CR>", "term" },
-  },
+  [';;'] = { "<Cmd>source %<CR>", "source %" },
 }
 
 wk.setup(setup)

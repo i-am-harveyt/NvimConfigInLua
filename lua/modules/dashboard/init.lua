@@ -1,7 +1,6 @@
 local home = os.getenv("HOME")
 local db = require('dashboard')
 --
--- db.preview_command = 'cat | lolcat -F 0.3' -- for macOS
 db.preview_command = 'cat' -- for macOS
 --
 db.preview_file_path = home .. '/.config/nvim/static/neovim.cat'
