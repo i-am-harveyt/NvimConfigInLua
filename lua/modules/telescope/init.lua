@@ -94,3 +94,18 @@ telescope.setup {
     -- please take a look at the readme of the extension you want to configure
   },
 }
+
+local wk_status, wk = pcall(require, "which-key")
+if not wk_status then
+    return
+end
+wk.register({
+    ["ff"] = {
+        "<Cmd>Telescope find_files<CR>",
+        "find"
+    },
+    ["fc"] = {
+        "<Cmd>Telescope find_files path="..os.getenv("HOME").."/.config/nvim/lua",
+        "config"
+    },
+}, { prefix = "<Leader>" })

@@ -3,6 +3,15 @@ vim.cmd[[packadd packer.nvim]]
 local packer = require('packer')
 
 packer.startup(function(use)
+
+
+    -- template
+    -- use { 'TmpAccount/TmpRepo' }
+
+    -- markdown-preview
+    -- I've not tackle on config file yet, just use default opetions
+
+
     -- let packer maintain itself
     use 'wbthomason/packer.nvim'
 
@@ -108,6 +117,13 @@ packer.startup(function(use)
     use {
         "akinsho/toggleterm.nvim",
         tag = 'v2.*',
+    }
+
+    use {
+      'iamcco/markdown-preview.nvim',
+      run = function () vim.fn["mkdp#util#install"]() end,
+      setup = function() vim.gmkdp_filetypes = { "markdown" } end,
+      ft = { " markdown" },
     }
 
 end)

@@ -14,4 +14,5 @@ require("modules.treesitter")
 require("modules.trouble")
 require("modules.devicons")
 require("modules.toggleterm")
+-- require("modules.mdpreview") -- not setup yet
 
