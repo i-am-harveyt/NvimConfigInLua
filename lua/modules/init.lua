@@ -1,7 +1,7 @@
 require("modules.autocomplete")
 require("modules.bufferline")
 require("modules.colorschemes")
-require("modules.dashboard")
+require("modules.alpha")
 require("modules.lualine")
 require("modules.mason")
 require("modules.nvimtree")

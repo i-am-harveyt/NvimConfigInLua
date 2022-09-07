@@ -31,8 +31,8 @@ packer.startup(function(use)
     -- Configurations for Nvim LSP
     use { 'neovim/nvim-lspconfig' }
 
-    -- Dashboard
-    use { 'glepnir/dashboard-nvim' }
+    -- Alpha
+    use { "goolord/alpha-nvim" }
 
     -- lualine
     use {
