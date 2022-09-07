@@ -38,15 +38,17 @@ wk.register({
   l = {
       name = "+LSP",
       a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-      d = {
+      d = { "<Cmd>lua vim.lsp.buf.definition()<CR>", "Definition"},
+      D = {
         "<cmd>Telescope diagnostics<cr>",
         "Document Diagnostics",
       },
-      -- w = {
-      --   "<cmd>Telescope lsp_workspace_diagnostics<cr>",
-      --   "Workspace Diagnostics",
-      -- },
+      w = {
+        "<cmd>Telescope lsp_workspace_diagnostics<cr>",
+        "Workspace Diagnostics",
+      },
       -- f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
+      h = { "<Cmd>lua vim.lsp.buf.hover()<CR>", "hover"},
       i = { "<cmd>LspInfo<cr>", "Info" },
       I = { "<cmd>Mason<cr>", "Installer Info" },
       j = {
@@ -57,7 +59,7 @@ wk.register({
         "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
         "Prev Diagnostic",
       },
-      -- l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+      l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
       q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
       r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
     },

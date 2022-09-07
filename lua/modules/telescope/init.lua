@@ -4,6 +4,7 @@ if not status_ok then
 end
 
 local actions = require "telescope.actions"
+local home = os.getenv("HOME")
 
 telescope.setup {
   defaults = {
@@ -104,8 +105,14 @@ wk.register({
         "<Cmd>Telescope find_files<CR>",
         "find"
     },
-    ["fc"] = {
-        "<Cmd>Telescope find_files path="..os.getenv("HOME").."/.config/nvim/lua",
-        "config"
+    ["F"] = {
+      ["f"] = {
+        "<Cmd>Telescope find_files<CR>",
+        "file"
+      },
+      ["w"] = {
+        "<Cmd>Telescope live_grep<CR>",
+        "word"
+      },
     },
 }, { prefix = "<Leader>" })
