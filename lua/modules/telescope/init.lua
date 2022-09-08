@@ -101,11 +101,15 @@ if not wk_status then
     return
 end
 wk.register({
-    ["ff"] = {
+    ["f"] = {
+      name = "file",
+      ["f"] = {
         "<Cmd>Telescope find_files<CR>",
         "find"
+      }
     },
     ["F"] = {
+      name = "Find",
       ["f"] = {
         "<Cmd>Telescope find_files<CR>",
         "file"
