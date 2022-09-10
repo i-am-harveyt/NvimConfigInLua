@@ -1,3 +1,13 @@
+local pk_status, pk = pcall(require, "lualine")
+if not pk_status then
+  return
+end
+
+pk.use({
+  'nvim-lualine/lualine.nvim',
+  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+})
+
 require('lualine').setup {
   options = {
     icons_enabled = true,

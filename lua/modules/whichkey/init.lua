@@ -1,3 +1,17 @@
+local packer_status, pk = pcall(require, "packer")
+
+if not packer_status then
+  return
+end
+
+-- Which Key
+pk.use({
+  "folke/which-key.nvim",
+  config = function()
+      require("which-key").setup {}
+  end
+})
+
 local status_ok, wk = pcall(require, "which-key")
 if not status_ok then
   return

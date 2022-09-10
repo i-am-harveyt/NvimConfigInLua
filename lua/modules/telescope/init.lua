@@ -1,3 +1,10 @@
+local pk_status, pk = pcall(require, "packer")
+if not pk_status then
+  return
+end
+
+pk.use({ "nvim-telescope/telescope.nvim" })
+
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
   return

@@ -1,3 +1,11 @@
+local pk_status, pk = pcall(require, "packer")
+if not pk_status then
+  return
+end
+
+pk.use ({ 'kyazdani42/nvim-web-devicons' })
+
+
 require('nvim-web-devicons').setup {
  -- your personnal icons can go here (to override)
  -- you can specify color or cterm_color instead of specifying both of them

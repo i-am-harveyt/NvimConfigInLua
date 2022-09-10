@@ -1,3 +1,20 @@
+local packer_status, pk = pcall(require, "packer")
+
+if not packer_status then
+  return
+end
+
+-- treesitter
+pk.use({
+  'nvim-treesitter/nvim-treesitter',
+  run = function ()
+    require('nvim-treesitter.install').update(
+      { with_sync = true }
+    )
+  end
+})
+
+
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "all",
 

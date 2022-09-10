@@ -1,8 +1,12 @@
 # Nvim Config in Lua
 
+## Upload 0911 2022
+
+Change file structure: I put all packer related stuff into respective plugin init file.
+
 ## Intro
 
-This is a config that I've setup for my neovim use. And almost all config is written in Lua.
+This is a config that I've setup for my neovim use. And almost all comfig is written in Lua.
 
 Someone may like auto-format when writing code, but I'm not a big fan of it.
 
@@ -34,7 +38,7 @@ nvim +PackerSync
 
 ### Options and Setting
 
-I didn't expect for someone may change the config on their own, and also, I have not configured out how to make APIs on my own. 
+I didn't expect for someone may change the config on their own, and slso, I have not configured out how to make APIs on my own. 
 
 Therefore, setting options may be a little inconvenient.
 
@@ -56,7 +60,7 @@ For example, Save file = `<spc>fs`, `<space>` to trigger which-key, `f` stands f
 
 ### LSP and Auto-complete
 
-I use [Mason](https://github.com/williamboman/mason.nvim) as the LSP installer manager. You can call mason via `<Leader>lI`.
+I use [Mason]() as the LSP installer manager. You can call mason via `<Leader>lI`.
 
 
 ## Uninstall

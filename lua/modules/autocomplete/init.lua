@@ -1,3 +1,23 @@
+local packer_status, pk = pcall(require, "packer")
+
+if not packer_status then
+  return
+end
+
+-- lspconfig
+pk.use({ 'neovim/nvim-lspconfig' })
+-- autocomplete
+pk.use { 'hrsh7th/cmp-nvim-lsp' }
+pk.use { 'hrsh7th/cmp-buffer' }
+pk.use { 'hrsh7th/cmp-path' }
+pk.use { 'hrsh7th/cmp-cmdline' }
+pk.use { 'hrsh7th/nvim-cmp' }
+-- Luasnip
+pk.use { 'L3MON4D3/LuaSnip' }
+pk.use { 'saadparwaiz1/cmp_luasnip' }
+pk.use { 'rafamadriz/friendly-snippets' }
+
+
 -- Setup nvim-cmp.
 local cmp_status, cmp = pcall(require, 'cmp')
 if not cmp_status then

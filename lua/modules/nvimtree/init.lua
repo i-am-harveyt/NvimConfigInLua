@@ -1,3 +1,15 @@
+local pk_status, pk = pcall(require, "packer")
+if not pk_status then
+  return
+end
+
+pk.use({
+  'kyazdani42/nvim-tree.lua',
+  requires = {
+    'kyazdani42/nvim-web-devicons', -- optional, for file icons
+  },
+})
+
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
   return
