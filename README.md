@@ -62,6 +62,38 @@ For example, Save file = `<spc>fs`, `<space>` to trigger which-key, `f` stands f
 
 I use [Mason]() as the LSP installer manager. You can call mason via `<Leader>lI`.
 
+### Costumize your plugins
+
+I put some basic plugins in `nvim/lua/core/pack.lua`.
+
+Most of the modules and setups are in  `nvim/lua/modules/<plugin-name>`
+
+So if you want to remove, just delete the folder and remove `require(
+"modules.<plugin-name>")`in `nvim/lua/modules/init.lua`.
+
+And if you want to add plugin, what you need to do is:
+
+1. Make a directory in `nvim/lua/modules`.
+  
+   For example: `nvim/lua/modules/foo`.
+
+2. Add require in `init.lua`.
+
+3. Make a `init.lua` file in `nvim/lua/modules/foo`.
+
+4. Paste 
+
+   ```
+   local pk_status, pk = pcall(require, "packer")
+   if not pk_status then
+     return
+   end
+   pk.use({ "account/foo" })
+
+   ```
+
+5. Quit, and run command `nvim +PackerSync` to Sync the plugin(s).
+
 
 ## Uninstall
 
