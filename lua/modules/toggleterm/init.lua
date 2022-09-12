@@ -1,13 +1,3 @@
-local pk_status, pk = pcall(require, "packer")
-if not pk_status then
-  return
-end
-
-pk.use({
-  "akinsho/toggleterm.nvim",
-  tag = 'v2.*',
-})
-
 local tt_status, tt = pcall(require, "toggleterm")
 if not tt_status then
   return

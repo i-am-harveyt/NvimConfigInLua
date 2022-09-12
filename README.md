@@ -64,7 +64,7 @@ I use [Mason]() as the LSP installer manager. You can call mason via `<Leader>lI
 
 ### Costumize your plugins
 
-I put some basic plugins in `nvim/lua/core/pack.lua`.
+I put plugins requirement in `nvim/lua/core/pack.lua`.
 
 Most of the modules and setups are in  `nvim/lua/modules/<plugin-name>`
 
@@ -81,18 +81,7 @@ And if you want to add plugin, what you need to do is:
 
 3. Make a `init.lua` file in `nvim/lua/modules/foo`.
 
-4. Paste 
-
-   ```
-   local pk_status, pk = pcall(require, "packer")
-   if not pk_status then
-     return
-   end
-   pk.use({ "account/foo" })
-
-   ```
-
-5. Quit, and run command `nvim +PackerSync` to Sync the plugin(s).
+4. Quit, and run command `nvim +PackerSync` to Sync the plugin(s).
 
 
 ## Uninstall

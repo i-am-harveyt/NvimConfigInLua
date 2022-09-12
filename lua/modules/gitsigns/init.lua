@@ -1,11 +1,3 @@
-local packer_status, pk = pcall(require, "packer")
-
-if not packer_status then
-  return
-end
-
-pk.use ({ 'lewis6991/gitsigns.nvim' })
-
 local status_ok, gitsigns = pcall(require, "gitsigns")
 if not status_ok then
   return

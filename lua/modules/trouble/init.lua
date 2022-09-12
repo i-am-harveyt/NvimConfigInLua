@@ -1,16 +1,3 @@
-local packer_status, pk = pcall(require, "packer")
-
-if not packer_status then
-  return
-end
-
-    -- trouble
-pk.use({
-  "folke/trouble.nvim",
-  requires = "kyazdani42/nvim-web-devicons",
-})
-
-
 local trouble_status, trouble = pcall(require, "trouble")
 
 if not trouble_status then

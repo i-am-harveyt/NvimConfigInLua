@@ -1,11 +1,3 @@
-local packer_status, pk = pcall(require, "packer")
-
-if not packer_status then
-  return
-end
-
-pk.use({ "goolord/alpha-nvim" })
-
 local alpha_status, a = pcall(require, "alpha")
 if not alpha_status then
   return

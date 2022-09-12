@@ -1,12 +1,3 @@
-local pk_status, pk = pcall(require, "packer")
-if not pk_status then
-  return
-end
-
-pk.use ({ "williamboman/mason.nvim" })
-pk.use ({ "williamboman/mason-lspconfig.nvim" })
-
-
 local mason = require("mason")
 
 mason.setup ({
