@@ -15,3 +15,6 @@ require("modules.trouble")
 require("modules.devicons")
 require("modules.toggleterm")
 
+-- test part
+require("modules.lspsaga")
+

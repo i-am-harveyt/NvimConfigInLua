@@ -51,7 +51,7 @@ packer.startup(function(use)
   use ({ 'lewis6991/gitsigns.nvim' })
 
   -- impatient, to make loading faster
-  use({ 'lewis6991/impatient.nvim' })
+  use ({ 'lewis6991/impatient.nvim' })
 
   use({
     'nvim-lualine/lualine.nvim',
@@ -61,34 +61,34 @@ packer.startup(function(use)
   use ({ "williamboman/mason.nvim" })
   use ({ "williamboman/mason-lspconfig.nvim" })
 
-  use({
+  use ({
     'iamcco/markdown-preview.nvim',
     run = function () vim.fn["mkdp#util#install"]() end,
     setup = function() vim.gmkdp_filetypes = { "markdown" } end,
     ft = { " markdown" },
   })
 
-  use({
+  use ({
     'kyazdani42/nvim-tree.lua',
     requires = {
       'kyazdani42/nvim-web-devicons', -- optional, for file icons
     },
   })
 
-  use({ "nvim-telescope/telescope.nvim" })
+  use ({ "nvim-telescope/telescope.nvim" })
 
-  use({
+  use ({
     "akinsho/toggleterm.nvim",
     tag = 'v2.*',
   })
 
   -- trouble
-  use({
+  use ({
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
   })
   -- treesitter
-  use({
+  use ({
     'nvim-treesitter/nvim-treesitter',
     run = function ()
       require('nvim-treesitter.install').update(
@@ -98,11 +98,41 @@ packer.startup(function(use)
   })
 
   -- Which Key
-  use({
+  use ({
     "folke/which-key.nvim",
     config = function()
         require("which-key").setup {}
     end
+  })
+
+  use ({
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+    config = function ()
+      local saga = require("lspsaga")
+      saga.init_lsp_saga({
+        border_style="rounded",
+        -- show symbols in winbar must nightly
+        symbol_in_winbar = {
+          in_custom = false,
+          enable = true,
+          separator = ' ',
+          show_file = true,
+          click_support = false,
+        },
+        show_outline = {
+          win_position = 'right',
+          win_with = '',
+          win_width = 30,
+          auto_enter = true,
+          auto_preview = true,
+          virt_text = '┃',
+          jump_key = 'o',
+          -- auto refresh when change buffer
+          auto_refresh = true,
+        },
+      })
+    end,
   })
 
 end)

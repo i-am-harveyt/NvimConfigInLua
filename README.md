@@ -14,7 +14,12 @@ When setting up this, I mainly refers to [Cosynvim](https://github.com/glepnir/c
 
 If you need a more well-configured, faster and stable one, the two repos I've mentioned are good options, and I've used [LunarVim](https://github.com/LunarVim/LunarVim) and [AstroNvim](https://github.com/AstroNvim/AstroNvim) before, both of them are great, I personally prefer the latter one.
 
-I'm doing this just because there're some keymaps that I'm more familiar to, like `<Space>fs` stands for `save`, and `<Space>tf` stands for floating-terminal, and so on. Moreover, I personally don't use that much plugins or functions, so I want to make a quite minimal config.
+I'm doing this just because there're some keymaps that I'm more familiar with, like `<Space>fs` stands for `save`, and `<Space>tf` stands for floating-terminal, and so on. Moreover, I personally don't use that much plugins or functions, so I want to make a quite minimal config.
+
+By the way, considering the readability of the word in dashboard's header picture, I should explain what that means. The word means "No one cares". There're two reasons:
+
+1. It's quite funny.
+2. There're very few friends cares about what I'm doing.
 
 HarveyT
 
@@ -66,10 +71,10 @@ I use [Mason]() as the LSP installer manager. You can call mason via `<Leader>lI
 
 I put plugins requirement in `nvim/lua/core/pack.lua`.
 
-Most of the modules and setups are in  `nvim/lua/modules/<plugin-name>`
+Most of the modules and setups are in  `nvim/lua/modules/<plugin-name>/`
 
-So if you want to remove, just delete the folder and remove `require(
-"modules.<plugin-name>")`in `nvim/lua/modules/init.lua`.
+So if you want to remove, just delete the `nvim/lua/modules/<plugin-name>/` folder and remove `require(
+"modules.<plugin-name>")`in `nvim/lua/modules/init.lua`. Furthermore, remove `use { "account/repo" }` in `nvim/lua/core/pack.lua`. PackerSync, done!
 
 And if you want to add plugin, what you need to do is:
 

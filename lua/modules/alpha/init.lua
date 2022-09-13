@@ -44,5 +44,5 @@ if not wk_status then
   return
 end
 wk.register({
-  ["d"] = { "<Cmd>Alpha<CR>", "dashboard" },
+  ["D"] = { "<Cmd>Alpha<CR>", "dashboard" },
 }, { prefix="<Leader>" })
