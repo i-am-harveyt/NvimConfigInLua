@@ -5,7 +5,7 @@ local packer = require('packer')
 packer.startup(function(use)
 
   -- let packer maintain itself
-  use 'wbthomason/packer.nvim'
+  use { 'wbthomason/packer.nvim' }
 
   -- plenary
   use { "nvim-lua/plenary.nvim" }
@@ -108,31 +108,6 @@ packer.startup(function(use)
   use ({
     "glepnir/lspsaga.nvim",
     branch = "main",
-    config = function ()
-      local saga = require("lspsaga")
-      saga.init_lsp_saga({
-        border_style="rounded",
-        -- show symbols in winbar must nightly
-        symbol_in_winbar = {
-          in_custom = false,
-          enable = true,
-          separator = ' ',
-          show_file = true,
-          click_support = false,
-        },
-        show_outline = {
-          win_position = 'right',
-          win_with = '',
-          win_width = 30,
-          auto_enter = true,
-          auto_preview = true,
-          virt_text = '┃',
-          jump_key = 'o',
-          -- auto refresh when change buffer
-          auto_refresh = true,
-        },
-      })
-    end,
   })
 
 end)
