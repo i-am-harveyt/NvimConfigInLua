@@ -105,10 +105,9 @@ local mappings = {
       s = {
           name = "+split",
           v = { "<C-w>v", "Vertically-split" },
-          h = { "<C-w>h", "Horizontally-split" },
+          h = { "<C-w>s", "Horizontally-split" },
       },
   },
-  [';;'] = { "<Cmd>source %<CR>", "source %" },
 }
 
 wk.setup(setup)

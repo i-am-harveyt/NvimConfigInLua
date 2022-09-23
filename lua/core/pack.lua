@@ -105,6 +105,7 @@ packer.startup(function(use)
     end
   })
 
+  -- lsp gui
   use ({
     "glepnir/lspsaga.nvim",
     branch = "main",

@@ -9,21 +9,21 @@ nvim_tree.setup({
     update_cwd = true,
   },
   view = {
-      mappings = {
-          list = {
-              { key = "c", action = "cd" },
-              { key = "N", action = "create" },
-              { key = "u", action = "dir_up" },
-              { key = "t", action = "tabnew" },
-              { key = "?", action = "toggle_help" },
-          },
-      }
+    mappings = {
+      list = {
+        { key = "c", action = "cd" },
+        { key = "N", action = "create" },
+        { key = "u", action = "dir_up" },
+        { key = "t", action = "tabnew" },
+        { key = "?", action = "toggle_help" },
+      },
+    }
   },
   git = {
-      enable = true,
-      ignore = true,
-      show_on_dirs = true,
-      timeout = 400,
+    enable = true,
+    ignore = true,
+    show_on_dirs = true,
+    timeout = 400,
   },
   renderer = {
     root_folder_modifier = ":t",
@@ -72,8 +72,8 @@ end
 wk.register({
   e = { "<Cmd>NvimTreeToggle<CR>", "explorer" },
   T = {
-      name = "+NvimTree",
-      r = { "<Cmd>NvimTreeRefresh<CR>", "refresh" },
-      t = { "<Cmd>NvimTreeToggle<CR>", "toggle" },
+    name = "+NvimTree",
+    r = { "<Cmd>NvimTreeRefresh<CR>", "refresh" },
+    t = { "<Cmd>NvimTreeToggle<CR>", "toggle" },
   },
 }, {prefix = "<Leader>"})
