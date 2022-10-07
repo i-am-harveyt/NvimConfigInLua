@@ -1,6 +1,6 @@
 local mason = require("mason")
 
-mason.setup ({
+mason.setup({
   ui = {
     icons = {
       package_installed = "✓",
@@ -11,7 +11,7 @@ mason.setup ({
 })
 
 local mason_lspconfig = require("mason-lspconfig")
-mason_lspconfig.setup ({
+mason_lspconfig.setup({
   ensure_installed = { "sumneko_lua" },
 })
 
@@ -32,35 +32,36 @@ mason_lspconfig.setup_handlers({
 
 local wk_status, wk = pcall(require, "which-key")
 if not wk_status then
-    return
+  return
 end
 wk.register({
   l = {
-      name = "+LSP",
-      a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-      d = { "<Cmd>lua vim.lsp.buf.definition()<CR>", "Definition"},
-      D = {
-        "<cmd>Telescope diagnostics<cr>",
-        "Document Diagnostics",
-      },
-      w = {
-        "<cmd>Telescope lsp_workspace_diagnostics<cr>",
-        "Workspace Diagnostics",
-      },
-      -- f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
-      h = { "<Cmd>lua vim.lsp.buf.hover()<CR>", "hover"},
-      i = { "<cmd>LspInfo<cr>", "Info" },
-      I = { "<cmd>Mason<cr>", "Installer Info" },
-      j = {
-        "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
-        "Next Diagnostic",
-      },
-      k = {
-        "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
-        "Prev Diagnostic",
-      },
-      l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-      q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
-      r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+    name = "+LSP",
+    a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+    d = { "<Cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
+    f = { "<Cmd>lua vim.lsp.buf.format()<CR>", "Format" },
+    D = {
+      "<cmd>Telescope diagnostics<cr>",
+      "Document Diagnostics",
     },
+    w = {
+      "<cmd>Telescope lsp_workspace_diagnostics<cr>",
+      "Workspace Diagnostics",
+    },
+    -- f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
+    h = { "<Cmd>lua vim.lsp.buf.hover()<CR>", "hover" },
+    i = { "<cmd>LspInfo<cr>", "Info" },
+    I = { "<cmd>Mason<cr>", "Installer Info" },
+    j = {
+      "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
+      "Next Diagnostic",
+    },
+    k = {
+      "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
+      "Prev Diagnostic",
+    },
+    l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+    q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
+    r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+  },
 }, { prefix = "<Leader>" })
