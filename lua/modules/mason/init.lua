@@ -21,11 +21,15 @@ local lspconfig = require("lspconfig")
 --   capabilities = lspconfig.capabilities,
 -- }
 
+local cmp_ok, cmp = pcall(require, "cmp_nvim_lsp")
+if not cmp_ok then
+  return
+end
 mason_lspconfig.setup_handlers({
   function(server_name) -- Default handler (optional)
     lspconfig[server_name].setup {
       -- on_attach = opts.on_attach,
-      -- capabilities = opts.capabilities,
+      capabilities = cmp.default_capabilities(),
     }
   end
 })

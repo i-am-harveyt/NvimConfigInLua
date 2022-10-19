@@ -42,7 +42,10 @@ packer.startup(function(use)
     requires = 'kyazdani42/nvim-web-devicons'
   })
 
+  --colorscheme
   use ({ "EdenEast/nightfox.nvim" })
+  use ({ "rebelot/kanagawa.nvim" })
+  use ({ "glepnir/zephyr-nvim" })
 
   use ({ "numToStr/Comment.nvim" })
 
@@ -53,11 +56,13 @@ packer.startup(function(use)
   -- impatient, to make loading faster
   use ({ 'lewis6991/impatient.nvim' })
 
+  --ui
   use({
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   })
 
+  --mason
   use ({ "williamboman/mason.nvim" })
   use ({ "williamboman/mason-lspconfig.nvim" })
 
@@ -68,6 +73,7 @@ packer.startup(function(use)
     ft = { " markdown" },
   })
 
+  --nvim-tree
   use ({
     'kyazdani42/nvim-tree.lua',
     requires = {
@@ -75,8 +81,10 @@ packer.startup(function(use)
     },
   })
 
+  --telescope
   use ({ "nvim-telescope/telescope.nvim" })
 
+  --toggle term
   use ({
     "akinsho/toggleterm.nvim",
     tag = 'v2.*',
