@@ -3,7 +3,7 @@ if not saga_ok then
   return
 end
 
-saga.init_lsp_saga({
+saga.setup({
   border_style = "rounded",
   saga_winblend = 0,
   move_in_saga = { prev = '<C-p>',next = '<C-n>'},
