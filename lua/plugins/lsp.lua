@@ -1,41 +1,41 @@
-local mason = require("mason")
+local ok_mason, mason = pcall(require, "mason")
+if not ok_mason then
+	print("No Mason")
+	return
+end
+mason.setup()
 
-mason.setup({
-  ui = {
-    icons = {
-      package_installed = "✓",
-      package_pending = "➜",
-      package_uninstalled = "✗",
-    },
-  }
-})
+local ok_mason_config, mason_config = pcall(require, "mason-lspconfig")
+if not ok_mason_config then
+	print("No Mason Lspconfig")
+	return
+end
 
-local mason_lspconfig = require("mason-lspconfig")
-mason_lspconfig.setup({
-  ensure_installed = { "lua_ls" },
-})
+local ok_lsp, lsp_config = pcall(require, "lspconfig")
+if not ok_lsp then
+	print("LSP config not setup yet")
+	return
+end
 
-local lspconfig = require("lspconfig")
--- local opts = {
---   on_attach = lspconfig.on_attach,
---   capabilities = lspconfig.capabilities,
--- }
-
+-- cmp_nvim_lsp is needed
 local cmp_ok, cmp = pcall(require, "cmp_nvim_lsp")
 if not cmp_ok then
-  return
+	print("Nvim-cmp-lsp not installed")
+	return
 end
-mason_lspconfig.setup_handlers({
-  function(server_name) -- Default handler (optional)
-    lspconfig[server_name].setup {
-      -- on_attach = opts.on_attach,
-      capabilities = cmp.default_capabilities(),
-    }
-  end
+local capailities = cmp.default_capabilities()
+mason_config.setup_handlers({
+	function(server_name)
+	lsp_config[server_name].setup {
+		capailities = capailities
+	}
+	end
 })
 
-local wk_status, wk = pcall(require, "which-key")
-if not wk_status then
+-- whick-key
+local ok_wk, wk = pcall(require, "which-key")
+if not ok_wk then
+	print("Which-Key not installed")
   return
 end
 wk.register({
@@ -52,7 +52,6 @@ wk.register({
       "<cmd>Telescope lsp_workspace_diagnostics<cr>",
       "Workspace Diagnostics",
     },
-    -- f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
     h = { "<Cmd>lua vim.lsp.buf.hover()<CR>", "hover" },
     i = { "<cmd>LspInfo<cr>", "Info" },
     I = { "<cmd>Mason<cr>", "Installer Info" },
@@ -68,4 +67,4 @@ wk.register({
     q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
   },
-}, { prefix = "<Leader>" })
+}, { prefix = "<Space>" })

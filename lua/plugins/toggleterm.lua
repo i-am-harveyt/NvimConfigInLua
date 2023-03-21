@@ -1,13 +1,14 @@
-local tt_status, tt = pcall(require, "toggleterm")
-if not tt_status then
+local tt_ok, tt = pcall(require, "toggleterm")
+if not tt_ok then
   return
 end
 
 tt.setup({})
 
 -- work with which-key
-local wk_status, wk = pcall(require, "which-key")
-if not wk_status then
+local wk_ok, wk = pcall(require, "which-key")
+if not wk_ok then
+	print("Which-key not installed")
   return
 end
 wk.register({
@@ -22,4 +23,4 @@ wk.register({
       "float"
     },
   }
-}, { prefix = "<Leader>" })
+}, { prefix = "<Space>" })
