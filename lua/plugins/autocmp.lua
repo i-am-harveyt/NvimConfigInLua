@@ -17,15 +17,15 @@ cmp.setup({
 		end
 	},
 	mapping = cmp.mapping.preset.insert({
-		  ['<C-u>'] = cmp.mapping.scroll_docs(-1),
-      ['<C-d>'] = cmp.mapping.scroll_docs(1),
-			["<C-CR>"] = cmp.mapping.complete(),
-      ['<C-k>'] = cmp.mapping.select_prev_item(),
-      ['<C-j>'] = cmp.mapping.select_next_item(),
-      ['<C-e>'] = cmp.mapping.abort(),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }),
-			-- Super Tab
-			["<Tab>"] = cmp.mapping(
+		['<C-u>'] = cmp.mapping.scroll_docs(-1),
+		['<C-d>'] = cmp.mapping.scroll_docs(1),
+		["<C-CR>"] = cmp.mapping.complete(),
+		['<C-k>'] = cmp.mapping.select_prev_item(),
+		['<C-j>'] = cmp.mapping.select_next_item(),
+		['<C-e>'] = cmp.mapping.abort(),
+		['<CR>'] = cmp.mapping.confirm({ select = true }),
+		-- Super Tab
+		["<Tab>"] = cmp.mapping(
 			function(fallback)
 				if cmp.visible() then
 					cmp.select_next_item()
@@ -36,8 +36,8 @@ cmp.setup({
 				else
 					fallback()
 				end
-			end, {"i", "s",}),
-			["<S-Tab>"] = cmp.mapping(
+			end, { "i", "s", }),
+		["<S-Tab>"] = cmp.mapping(
 			function(fallback)
 				if cmp.visible() then
 					cmp.select_prev_item()
@@ -48,13 +48,10 @@ cmp.setup({
 				end
 			end, { "i", "s", }),
 	}),
-
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
 	}, {
 		{ name = "buffer" },
 	})
-
 })
-

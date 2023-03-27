@@ -26,45 +26,45 @@ end
 local capailities = cmp.default_capabilities()
 mason_config.setup_handlers({
 	function(server_name)
-	lsp_config[server_name].setup {
-		capailities = capailities
-	}
-	end
+		lsp_config[server_name].setup({
+			capailities = capailities,
+		})
+	end,
 })
 
 -- whick-key
 local ok_wk, wk = pcall(require, "which-key")
 if not ok_wk then
 	print("Which-Key not installed")
-  return
+	return
 end
 wk.register({
-  l = {
-    name = "+LSP",
-    a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-    d = { "<Cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
-    f = { "<Cmd>lua vim.lsp.buf.format()<CR>", "Format" },
-    D = {
-      "<cmd>Telescope diagnostics<cr>",
-      "Document Diagnostics",
-    },
-    w = {
-      "<cmd>Telescope lsp_workspace_diagnostics<cr>",
-      "Workspace Diagnostics",
-    },
-    h = { "<Cmd>lua vim.lsp.buf.hover()<CR>", "hover" },
-    i = { "<cmd>LspInfo<cr>", "Info" },
-    I = { "<cmd>Mason<cr>", "Installer Info" },
-    j = {
-      "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
-      "Next Diagnostic",
-    },
-    k = {
-      "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
-      "Prev Diagnostic",
-    },
-    l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-    q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
-    r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-  },
+	l = {
+		name = "+LSP",
+		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+		d = { "<Cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
+		f = { "<Cmd>lua vim.lsp.buf.format { async = true }<CR>", "Format" },
+		D = {
+			"<cmd>Telescope diagnostics<cr>",
+			"Document Diagnostics",
+		},
+		w = {
+			"<cmd>Telescope lsp_workspace_diagnostics<cr>",
+			"Workspace Diagnostics",
+		},
+		h = { "<Cmd>lua vim.lsp.buf.hover()<CR>", "hover" },
+		i = { "<cmd>LspInfo<cr>", "Info" },
+		I = { "<cmd>Mason<cr>", "Installer Info" },
+		j = {
+			"<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
+			"Next Diagnostic",
+		},
+		k = {
+			"<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
+			"Prev Diagnostic",
+		},
+		l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+		q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
+		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+	},
 }, { prefix = "<Space>" })

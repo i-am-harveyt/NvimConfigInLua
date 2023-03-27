@@ -44,6 +44,20 @@ packer.startup(
 				'nvim-lua/plenary.nvim'
 			}
 		}
+		--null ls
+		use { 'jose-elias-alvarez/null-ls.nvim' }
+		--autopair
+		use {
+			'windwp/nvim-autopairs',
+			config = function()
+				local ok_ap, ap = pcall(require, "nvim-autopairs")
+				if not ok_ap then
+					print("Nvim-autopair not installed")
+					return
+				end
+				ap.setup({})
+			end
+		}
 
 		-- ui
 		-- colorscheme
@@ -87,6 +101,7 @@ require("plugins/lsp")
 require("plugins/lspsaga")
 require("plugins/lualine")
 require("plugins/nvimtree")
+require("plugins/nullls")
 require("plugins/telescope")
 require("plugins/toggleterm")
 require("plugins/treesitter")

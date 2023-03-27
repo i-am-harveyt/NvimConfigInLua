@@ -134,6 +134,17 @@ _G.packer_plugins = {
     path = "/Users/tonghaoting/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/Users/tonghaoting/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+  },
+  ["nvim-autopairs"] = {
+    config = { "\27LJ\2\n„\1\0\0\5\0\6\0\0146\0\0\0006\2\1\0'\3\2\0B\0\3\3\14\0\0\0X\2\4€6\2\3\0'\4\4\0B\2\2\1K\0\1\0009\2\5\0014\4\0\0B\2\2\1K\0\1\0\nsetup Nvim-autopair not installed\nprint\19nvim-autopairs\frequire\npcall\0" },
+    loaded = true,
+    path = "/Users/tonghaoting/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/tonghaoting/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -192,6 +203,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+try_loadstring("\27LJ\2\n„\1\0\0\5\0\6\0\0146\0\0\0006\2\1\0'\3\2\0B\0\3\3\14\0\0\0X\2\4€6\2\3\0'\4\4\0B\2\2\1K\0\1\0009\2\5\0014\4\0\0B\2\2\1K\0\1\0\nsetup Nvim-autopair not installed\nprint\19nvim-autopairs\frequire\npcall\0", "config", "nvim-autopairs")
+time([[Config for nvim-autopairs]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
