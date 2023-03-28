@@ -4,7 +4,7 @@ if not ok then
 	return
 end
 
-ts.setup {
+ts.setup({
 	sync_install = true,
 	auto_install = true,
 	highlight = {
@@ -16,4 +16,4 @@ ts.setup {
 	indent = {
 		enable = true,
 	},
-}
+})

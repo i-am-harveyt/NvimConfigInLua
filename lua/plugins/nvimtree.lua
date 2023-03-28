@@ -1,7 +1,7 @@
 local ok, nvt = pcall(require, "nvim-tree")
 if not ok then
-  print("Nvim-Tree not installed")
-  return
+	print("Nvim-Tree not installed")
+	return
 end
 nvt.setup({
 	update_focused_file = {
@@ -10,13 +10,13 @@ nvt.setup({
 	view = {
 		mappings = {
 			list = {
-				{ key = 'c', action = "cd" },
-				{ key = 'N', action = "create" },
-				{ key = 'u', action = "dir_up" },
-				{ key = 't', action = "tabnew" },
-				{ key = '?', action = "toggle_help" },
-			}
-		}
+				{ key = "c", action = "cd" },
+				{ key = "N", action = "create" },
+				{ key = "u", action = "dir_up" },
+				{ key = "t", action = "tabnew" },
+				{ key = "?", action = "toggle_help" },
+			},
+		},
 	},
 	git = {
 		enable = true,
@@ -26,7 +26,7 @@ nvt.setup({
 	diagnostics = {
 		enable = true,
 		show_on_dirs = true,
-	}
+	},
 })
 
 local wk_ok, wk = pcall(require, "which-key")
@@ -35,12 +35,10 @@ if not wk_ok then
 	return
 end
 wk.register({
-  e = {"<Cmd>NvimTreeToggle<CR>", "Explorer"},
-  T = {
-    name = "+NvimTree",
-    t = {"<Cmd>NvimTreeToggle<CR>", "Toggle"},
-    r = {"<Cmd>NvimTreeRefresh<CR>", "Refresh"},
-  }
+	e = { "<Cmd>NvimTreeToggle<CR>", "Explorer" },
+	T = {
+		name = "+NvimTree",
+		t = { "<Cmd>NvimTreeToggle<CR>", "Toggle" },
+		r = { "<Cmd>NvimTreeRefresh<CR>", "Refresh" },
+	},
 }, { prefix = "<Space>" })
-
-

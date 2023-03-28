@@ -21,10 +21,9 @@ wk.register({
 	d = {
 		name = "+Diagnostics",
 		...,
-		w = { "<Cmd>Trouble workspace_diagnostics<CR>", "workspace"},
-		d = { "<Cmd>Trouble document_diagnostics<CR>", "document"},
-		q = { "<Cmd>Trouble quickfix<CR>", "quickfix"},
-		t = { "<Cmd>TroubleToggle<CR>", "toggle"},
-	}
+		w = { "<Cmd>Trouble workspace_diagnostics<CR>", "workspace" },
+		d = { "<Cmd>Trouble document_diagnostics<CR>", "document" },
+		q = { "<Cmd>Trouble quickfix<CR>", "quickfix" },
+		t = { "<Cmd>TroubleToggle<CR>", "toggle" },
+	},
 }, { prefix = "<Space>" })
-

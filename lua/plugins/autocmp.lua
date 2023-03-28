@@ -14,44 +14,42 @@ cmp.setup({
 	snippet = {
 		expand = function(args)
 			ls.lsp_expand(args.body)
-		end
+		end,
 	},
 	mapping = cmp.mapping.preset.insert({
-		['<C-u>'] = cmp.mapping.scroll_docs(-1),
-		['<C-d>'] = cmp.mapping.scroll_docs(1),
+		["<C-u>"] = cmp.mapping.scroll_docs(-1),
+		["<C-d>"] = cmp.mapping.scroll_docs(1),
 		["<C-CR>"] = cmp.mapping.complete(),
-		['<C-k>'] = cmp.mapping.select_prev_item(),
-		['<C-j>'] = cmp.mapping.select_next_item(),
-		['<C-e>'] = cmp.mapping.abort(),
-		['<CR>'] = cmp.mapping.confirm({ select = true }),
+		["<C-k>"] = cmp.mapping.select_prev_item(),
+		["<C-j>"] = cmp.mapping.select_next_item(),
+		["<C-e>"] = cmp.mapping.abort(),
+		["<CR>"] = cmp.mapping.confirm({ select = true }),
 		-- Super Tab
-		["<Tab>"] = cmp.mapping(
-			function(fallback)
-				if cmp.visible() then
-					cmp.select_next_item()
-				elseif ls.expandable() then
-					ls.expand()
-				elseif ls.expand_or_jumpable() then
-					ls.expand_or_jump()
-				else
-					fallback()
-				end
-			end, { "i", "s", }),
-		["<S-Tab>"] = cmp.mapping(
-			function(fallback)
-				if cmp.visible() then
-					cmp.select_prev_item()
-				elseif ls.jumpable(-1) then
-					ls.jump(-1)
-				else
-					fallback()
-				end
-			end, { "i", "s", }),
+		["<Tab>"] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_next_item()
+			elseif ls.expandable() then
+				ls.expand()
+			elseif ls.expand_or_jumpable() then
+				ls.expand_or_jump()
+			else
+				fallback()
+			end
+		end, { "i", "s" }),
+		["<S-Tab>"] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_prev_item()
+			elseif ls.jumpable(-1) then
+				ls.jump(-1)
+			else
+				fallback()
+			end
+		end, { "i", "s" }),
 	}),
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
 	}, {
 		{ name = "buffer" },
-	})
+	}),
 })
