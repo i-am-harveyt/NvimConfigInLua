@@ -1,5 +1,19 @@
 # Nvim Config in Lua
 
+<!--toc:start-->
+
+- [Nvim Config in Lua](#nvim-config-in-lua)
+  - [Upload 0911 2022](#upload-0911-2022)
+  - [Intro](#intro)
+  - [Install](#install)
+  - [Usage](#usage)
+    - [Options and Setting](#options-and-setting)
+    - [Which-key](#which-key)
+    - [LSP and Auto-complete](#lsp-and-auto-complete)
+    - [Costumize your plugins](#costumize-your-plugins)
+  - [Uninstall](#uninstall)
+  <!--toc:end-->
+
 ## Upload 0911 2022
 
 Change file structure: I put all packer related stuff into respective plugin init file.
@@ -33,7 +47,6 @@ mv ~/.config/nvim/ ~/.config/nvimbackup
 
 Clone this repo
 
-
 ```
 git clone https://github.com/i-am-harveyt/NvimConfigInLua ~/.config/nvim
 nvim +PackerSync
@@ -43,7 +56,7 @@ nvim +PackerSync
 
 ### Options and Setting
 
-I didn't expect for someone may change the config on their own, and slso, I have not configured out how to make APIs on my own. 
+I didn't expect for someone may change the config on their own, and slso, I have not configured out how to make APIs on my own.
 
 Therefore, setting options may be a little inconvenient.
 
@@ -51,7 +64,7 @@ Here are some hint or rules when I manage files, knowing this may help you to fi
 
 1. If you want to adjust something I've set. Goto `~/.config/nvim/` then use `:Telescope live_grep` may be the most efficient way to find where the option is.
 
-2. The most basic option, such as line number, encoding, tabstop, they're in `~/.config/nvim/lua/core/options.lua`. 
+2. The most basic option, such as line number, encoding, tabstop, they're in `~/.config/nvim/lua/core/options.lua`.
 
 3. The most general keymappings like leaderkey, windows, are in `~/.config/nvim/lua/modules/whichkey/init.lua`, module-related keymappings are in the `~/.config/nvim/lua/modules/<module_name>/init.lua`.
 
@@ -71,7 +84,7 @@ I use [Mason]() as the LSP installer manager. You can call mason via `<Leader>lI
 
 I put plugins requirement in `nvim/lua/core/pack.lua`.
 
-Most of the modules and setups are in  `nvim/lua/modules/<plugin-name>/`
+Most of the modules and setups are in `nvim/lua/modules/<plugin-name>/`
 
 So if you want to remove, just delete the `nvim/lua/modules/<plugin-name>/` folder and remove `require(
 "modules.<plugin-name>")`in `nvim/lua/modules/init.lua`. Furthermore, remove `use { "account/repo" }` in `nvim/lua/core/pack.lua`. PackerSync, done!
@@ -79,7 +92,7 @@ So if you want to remove, just delete the `nvim/lua/modules/<plugin-name>/` fold
 And if you want to add plugin, what you need to do is:
 
 1. Make a directory in `nvim/lua/modules`.
-  
+
    For example: `nvim/lua/modules/foo`.
 
 2. Add require in `init.lua`.
@@ -87,7 +100,6 @@ And if you want to add plugin, what you need to do is:
 3. Make a `init.lua` file in `nvim/lua/modules/foo`.
 
 4. Quit, and run command `nvim +PackerSync` to Sync the plugin(s).
-
 
 ## Uninstall
 

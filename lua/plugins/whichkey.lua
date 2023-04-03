@@ -26,6 +26,7 @@ wk.register({
 	f = {
 		name = "+file",
 		s = { "<Cmd>w<CR>", "Save" },
+		S = { "<Cmd>lua vim.lsp.buf.format{aync=true}<CR><Cmd>w<CR>", "Save" },
 	},
 	w = {
 		name = "+window",

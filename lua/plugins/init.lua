@@ -57,6 +57,15 @@ packer.startup(function(use)
 			ap.setup({})
 		end,
 	})
+	--markdown preview
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = "cd app && npm install",
+		setup = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+	})
 
 	-- ui
 	-- colorscheme
@@ -88,6 +97,10 @@ packer.startup(function(use)
 			"nvim-tree/nvim-web-devicons",
 		},
 	})
+	--notify
+	use({
+		"rcarriga/nvim-notify",
+	})
 end)
 
 -- require
@@ -106,6 +119,7 @@ require("plugins/toggleterm")
 require("plugins/treesitter")
 require("plugins/trouble")
 require("plugins/whichkey")
+require("plugins/notify")
 
 local wk_ok, wk = pcall(require, "which-key")
 if not wk_ok then
