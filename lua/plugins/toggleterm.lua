@@ -1,26 +1,27 @@
-local tt_ok, tt = pcall(require, "toggleterm")
-if not tt_ok then
-	return
+local config = function()
+	require('toggleterm').setup()
 end
 
-tt.setup({})
-
--- work with which-key
 local wk_ok, wk = pcall(require, "which-key")
-if not wk_ok then
-	print("Which-key not installed")
-	return
+if wk_ok then
+	wk.register({
+			t = {
+				name = "+ToggleTerm",
+				f = {
+					"<Cmd>ToggleTerm size=5 direction=float<CR>",
+					"Float"
+				},
+				h = {
+					"<Cmd>ToggleTerm size=9 direction=horizontal<CR>",
+					"Horizontal"
+				}
+			},
+		},
+		{ prefix = "<Space>" }
+	)
 end
-wk.register({
-	t = {
-		name = "ToggleTerminal",
-		h = {
-			"<Cmd>ToggleTerm size=9 direction=horizontal<CR>",
-			"horizontally",
-		},
-		f = {
-			"<Cmd>ToggleTerm size=5 direction=float<CR>",
-			"float",
-		},
-	},
-}, { prefix = "<Space>" })
+
+return {
+	'akinsho/toggleterm.nvim',
+	config = config
+}

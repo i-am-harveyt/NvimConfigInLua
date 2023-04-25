@@ -14,9 +14,9 @@
   - [Uninstall](#uninstall)
   <!--toc:end-->
 
-## Upload 0911 2022
+## Upload 0425 2023
 
-Change file structure: I put all packer related stuff into respective plugin init file.
+Migrate from `Packer.nvim` to `Lazy.nvim`, and a couple modifications.
 
 ## Intro
 
@@ -29,11 +29,6 @@ When setting up this, I mainly refers to [Cosynvim](https://github.com/glepnir/c
 If you need a more well-configured, faster and stable one, the two repos I've mentioned are good options, and I've used [LunarVim](https://github.com/LunarVim/LunarVim) and [AstroNvim](https://github.com/AstroNvim/AstroNvim) before, both of them are great, I personally prefer the latter one.
 
 I'm doing this just because there're some keymaps that I'm more familiar with, like `<Space>fs` stands for `save`, and `<Space>tf` stands for floating-terminal, and so on. Moreover, I personally don't use that much plugins or functions, so I want to make a quite minimal config.
-
-By the way, considering the readability of the word in dashboard's header picture, I should explain what that means. The word means "No one cares". There're two reasons:
-
-1. It's quite funny.
-2. There're very few friends cares about what I'm doing.
 
 HarveyT
 
@@ -49,7 +44,7 @@ Clone this repo
 
 ```
 git clone https://github.com/i-am-harveyt/NvimConfigInLua ~/.config/nvim
-nvim +PackerSync
+nvim
 ```
 
 ## Usage
@@ -64,11 +59,11 @@ Here are some hint or rules when I manage files, knowing this may help you to fi
 
 1. If you want to adjust something I've set. Goto `~/.config/nvim/` then use `:Telescope live_grep` may be the most efficient way to find where the option is.
 
-2. The most basic option, such as line number, encoding, tabstop, they're in `~/.config/nvim/lua/core/options.lua`.
+2. The most basic option, such as line number, encoding, tabstop, they're in `~/.config/nvim/lua/core/opt.lua`.
 
-3. The most general keymappings like leaderkey, windows, are in `~/.config/nvim/lua/modules/whichkey/init.lua`, module-related keymappings are in the `~/.config/nvim/lua/modules/<module_name>/init.lua`.
+3. The most general keymappings like leaderkey, windows, are in `~/.config/nvim/lua/plugins/which-key.lua`, module-related keymappings are in the `~/.config/nvim/lua/modules/<module_name>.lua`.
 
-4. If you want to customize header on dashboard, goto `~/.config/nvim/lua/modules/alpha/init.lua`, you'll know where to change it.
+4. If you want to customize header on dashboard, goto `~/.config/nvim/lua/plugins/alpha-nvim.lua`, you'll know where to change it.
 
 ### Which-key
 
@@ -82,24 +77,21 @@ I use [Mason]() as the LSP installer manager. You can call mason via `<Leader>lI
 
 ### Costumize your plugins
 
-I put plugins requirement in `nvim/lua/core/pack.lua`.
+I put plugins requirement in `nvim/lua/plugins/init.lua`.
 
-Most of the modules and setups are in `nvim/lua/modules/<plugin-name>/`
+Most of the modules and setups are in `nvim/lua/plugins/<plugin-name>.lua`
 
-So if you want to remove, just delete the `nvim/lua/modules/<plugin-name>/` folder and remove `require(
-"modules.<plugin-name>")`in `nvim/lua/modules/init.lua`. Furthermore, remove `use { "account/repo" }` in `nvim/lua/core/pack.lua`. PackerSync, done!
+So if you want to remove, just delete the `nvim/lua/modules/<plugin-name>.lua` folder and remove `{ <plugin-name> },`in `nvim/lua/plugins/init.lua`. Then, `<Cmd>Lazy<Enter>`, done!
 
 And if you want to add plugin, what you need to do is:
 
-1. Make a directory in `nvim/lua/modules`.
+1. Make a file in `nvim/lua/plugins`.
 
-   For example: `nvim/lua/modules/foo`.
+   For example: `nvim/lua/plugins/<module-name>.lua`.
 
-2. Add require in `init.lua`.
+2. Add `{ "acc/repo" }` in `init.lua`.
 
-3. Make a `init.lua` file in `nvim/lua/modules/foo`.
-
-4. Quit, and run command `nvim +PackerSync` to Sync the plugin(s).
+3. Quit, and run command `nvim +Lazy` to Sync the plugin(s).
 
 ## Uninstall
 

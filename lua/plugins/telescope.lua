@@ -1,19 +1,10 @@
-local ok, ts = pcall(require, "telescope")
-if not ok then
-	print("Telescope not installed")
-	return
+local config = function()
+	require('telescope').setup()
 end
 
-ts.setup()
-
---which key
-local wk_ok, wk = pcall(require, "which-key")
-if not wk_ok then
-	print("Which-key not installed")
-	return
-end
+local wk = require('which-key')
 wk.register({
-	["f"] = {
+["f"] = {
 		name = "file",
 		["f"] = {
 			"<Cmd>Telescope find_files<CR>",
@@ -32,3 +23,9 @@ wk.register({
 		},
 	},
 }, { prefix = "<Space>" })
+
+return {
+	"nvim-telescope/telescope.nvim",
+	dependencies = {"nvim-lua/plenary.nvim"},
+	config = config,
+}
