@@ -45,7 +45,7 @@ return {
 		{
 			"<Space>e",
 			"<Cmd>NvimTreeToggle<CR>",
-			desc = "Explorer",
+			desc = "File Tree",
 		},
 	},
 	config = config,

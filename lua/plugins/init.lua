@@ -24,6 +24,13 @@ return {
 			require("nvim-autopairs").setup({})
 		end,
 	},
+	-- comment
+	{
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end,
+	},
 
 	-- UI --
 	-- nvimtree
