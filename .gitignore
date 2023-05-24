@@ -1,2 +1,4 @@
 lua/.luarc.json
 lazy-lock.json
+.DS_Store
+*/.DS_Store
