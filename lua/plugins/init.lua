@@ -31,17 +31,19 @@ return {
 			require("Comment").setup()
 		end,
 	},
+	-- diagnostics
+	"folke/trouble.nvim",
 
 	-- UI --
 	-- nvimtree
 	"nvim-tree/nvim-tree.lua",
 	-- colorscheme
 	{
-		"rebelot/kanagawa.nvim",
+		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd([[colorscheme kanagawa]])
+			vim.cmd([[colorscheme tokyonight-moon]])
 		end,
 	},
 	-- statusline
@@ -60,4 +62,11 @@ return {
 	"glepnir/lspsaga.nvim",
 	-- indent line
 	"lukas-reineke/indent-blankline.nvim",
+	-- colorizer
+	{
+		"norcalli/nvim-colorizer.lua",
+		config = function()
+			require("colorizer").setup()
+		end,
+	},
 }
