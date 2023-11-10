@@ -23,7 +23,7 @@ local config = function()
 			f = {
 				name = "+file",
 				s = { "<Cmd>w<CR>", "Save" },
-				S = { "<Cmd>lua vim.lsp.buf.format{aync=true}<CR><Cmd>w<CR>", "Save" },
+				S = { "<Cmd>lua vim.lsp.buf.format{aync=true}<CR><Cmd>w<CR>", "Format & Save" },
 			},
 			w = {
 				name = "+window",

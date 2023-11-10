@@ -25,27 +25,7 @@ local config = function()
 			["<C-j>"] = cmp.mapping.select_next_item(),
 			["<C-e>"] = cmp.mapping.abort(),
 			["<CR>"] = cmp.mapping.confirm({ select = true }),
-			-- Super Tab
-			["<Tab>"] = cmp.mapping(function(fallback)
-				if cmp.visible() then
-					cmp.select_next_item()
-				elseif ls.expandable() then
-					ls.expand()
-				elseif ls.expand_or_jumpable() then
-					ls.expand_or_jump()
-				else
-					fallback()
-				end
-			end, { "i", "s" }),
-			["<S-Tab>"] = cmp.mapping(function(fallback)
-				if cmp.visible() then
-					cmp.select_prev_item()
-				elseif ls.jumpable(-1) then
-					ls.jump(-1)
-				else
-					fallback()
-				end
-			end, { "i", "s" }),
+			["<Tab>"] = cmp.mapping.confirm({ select = true }),
 		}),
 		sources = cmp.config.sources({
 			{ name = "nvim_lsp" },

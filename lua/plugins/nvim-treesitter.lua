@@ -11,5 +11,6 @@ end
 
 return {
 	'nvim-treesitter/nvim-treesitter',
+	event = "BufRead",
 	config = config,
 }

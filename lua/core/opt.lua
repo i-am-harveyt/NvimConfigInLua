@@ -19,6 +19,7 @@ opt.nu = true
 opt.rnu = true
 opt.clipboard = "unnamedplus"
 opt.guifont = "*"
+opt.swapfile = false
 
 vim.keymap.set("i", "<c-l>", "<ESC>")
 

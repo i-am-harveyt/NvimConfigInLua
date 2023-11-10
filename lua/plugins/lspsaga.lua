@@ -17,6 +17,7 @@ else
 			["f"] = { "<Cmd>Lspsaga lsp_finder<CR>", "find" },
 			["j"] = { "<Cmd>Lspsaga diagnostic_jump_next<CR>", "next_diagnostics" },
 			["k"] = { "<Cmd>Lspsaga diagnostic_jump_prev<CR>", "prev_diagnostics" },
+			["i"] = { "<Cmd>Lspsaga finder imp<CR>", "implementation" },
 		},
 		["d"] = {
 			name = "diagnostics",
@@ -29,6 +30,7 @@ end
 
 return {
 	"glepnir/lspsaga.nvim",
+	event = "BufRead",
 	dependencies = { 'nvim-tree/nvim-web-devicons' },
 	config = config
 }

@@ -14,10 +14,10 @@ local function on_attach(bufnr)
 
 	api.config.mappings.default_on_attach(bufnr)
 
-	vim.keymap.set("n", "c", api.tree.change_root_to_node, opts("CD")) -- change dir
-	vim.keymap.set("n", "N", api.fs.create, opts("create")) -- create
+	vim.keymap.set("n", "c", api.tree.change_root_to_node, opts("CD"))  -- change dir
+	vim.keymap.set("n", "N", api.fs.create, opts("create"))             -- create
 	vim.keymap.set("n", "u", api.tree.change_root_to_parent, opts("Up")) -- up
-	vim.keymap.set("n", "?", api.tree.toggle_help, opts("Help")) -- help
+	vim.keymap.set("n", "?", api.tree.toggle_help, opts("Help"))        -- help
 end
 
 local config = function()
@@ -36,6 +36,12 @@ local config = function()
 			enable = true,
 			show_on_dirs = true,
 		},
+		view = {
+			side = "right",
+			-- number = true,
+			-- relativenumber = true,
+			-- float = { enable = true }
+		}
 	})
 end
 

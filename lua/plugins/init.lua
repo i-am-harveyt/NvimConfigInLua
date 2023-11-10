@@ -1,6 +1,8 @@
 return {
-	-- alpha
-	"goolord/alpha-nvim",
+	-- my self-written
+	-- { dir = "/Users/tonghaoting/.config/nvim/lua/plugins/power.nvim" },
+	--end
+
 	-- mason & LSPs
 	"williamboman/mason.nvim",
 	-- auto complete
@@ -9,8 +11,6 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	-- gitsigns
 	"lewis6991/gitsigns.nvim",
-	-- toggle term
-	"akinsho/toggleterm.nvim",
 	-- telescope
 	"nvim-telescope/telescope.nvim",
 	-- which-key
@@ -20,6 +20,7 @@ return {
 	-- auto-pair
 	{
 		"windwp/nvim-autopairs",
+		event = "InsertEnter",
 		config = function()
 			require("nvim-autopairs").setup({})
 		end,
@@ -27,12 +28,25 @@ return {
 	-- comment
 	{
 		"numToStr/Comment.nvim",
+		event = "BufRead",
 		config = function()
 			require("Comment").setup()
 		end,
 	},
 	-- diagnostics
 	"folke/trouble.nvim",
+	-- Markdown preview
+	{
+		"iamcco/markdown-preview.nvim",
+		ft = "markdown",
+		config = function()
+			vim.fn["mkdp#util#install"]()
+		end
+	},
+	-- {
+	-- 	"m4xshen/hardtime.nvim",
+	-- 	opts = {}
+	-- },
 
 	-- UI --
 	-- nvimtree
@@ -51,13 +65,7 @@ return {
 	-- bufferline
 	"akinsho/bufferline.nvim",
 	-- notify
-	{
-		"rcarriga/nvim-notify",
-		lazy = false,
-		config = function()
-			vim.notify = require("notify")
-		end,
-	},
+	"rcarriga/nvim-notify",
 	-- lspsaga
 	"glepnir/lspsaga.nvim",
 	-- indent line
@@ -65,8 +73,18 @@ return {
 	-- colorizer
 	{
 		"norcalli/nvim-colorizer.lua",
+		event = "BufRead",
 		config = function()
 			require("colorizer").setup()
 		end,
 	},
+	{
+		'glacambre/firenvim',
+		lazy = not vim.g.started_by_firenvim,
+		module = false,
+		build = function()
+			vim.fn["firenvim#install"](0)
+		end,
+	},
+
 }

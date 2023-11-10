@@ -3,8 +3,8 @@ local config = function()
 		options = {
 			icons_enabled = true,
 			theme = "onedark",
-			section_separators = { left = "", right = "" },
-			component_separators = { left = "", right = "" },
+			section_separators = { left = "", right = "" },
+			component_separators = { left = "|", right = "|" },
 		}
 	})
 end
