@@ -1,31 +1,12 @@
 local config = function()
-	require('telescope').setup()
+	require("telescope").setup()
 end
 
-local wk = require('which-key')
-wk.register({
-["f"] = {
-		name = "file",
-		["f"] = {
-			"<Cmd>Telescope find_files<CR>",
-			"find",
-		},
-	},
-	["F"] = {
-		name = "Find",
-		["f"] = {
-			"<Cmd>Telescope find_files<CR>",
-			"file",
-		},
-		["w"] = {
-			"<Cmd>Telescope live_grep<CR>",
-			"word",
-		},
-	},
-}, { prefix = "<Space>" })
+vim.keymap.set("n", "<C-f>w", ":Telescope live_grep", { desc = "Find Words", silent = true })
+vim.keymap.set("n", "<C-f>f", ":Telescope find_files", { desc = "Find Files", silent = true })
 
 return {
 	"nvim-telescope/telescope.nvim",
-	dependencies = {"nvim-lua/plenary.nvim"},
+	dependencies = { "nvim-lua/plenary.nvim" },
 	config = config,
 }

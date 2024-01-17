@@ -22,6 +22,10 @@ end
 
 local config = function()
 	local nt = require("nvim-tree")
+	vim.keymap.set(
+		"n", "<space>e", ":NvimTreeToggle<CR>",
+		{ desc = "Previous Buffer", silent=true}
+	)
 	nt.setup({
 		on_attach = on_attach,
 		update_focused_file = {
@@ -47,12 +51,5 @@ end
 
 return {
 	"nvim-tree/nvim-tree.lua",
-	keys = {
-		{
-			"<Space>e",
-			"<Cmd>NvimTreeToggle<CR>",
-			desc = "File Tree",
-		},
-	},
 	config = config,
 }

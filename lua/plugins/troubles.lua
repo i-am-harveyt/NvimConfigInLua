@@ -1,12 +1,3 @@
-local wk = require("which-key")
-wk.register({
-	T = {
-		name = "Trouble",
-		d = { "<cmd>Trouble document_diagnostics<cr>", "document" },
-		w = { "<cmd>Trouble workspace_diagnostics<cr>", "workspace" },
-	},
-}, { prefix = "<Space>" })
-
 return {
 	"folke/trouble.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },

@@ -9,8 +9,6 @@ return {
 	"lewis6991/gitsigns.nvim",
 	-- telescope
 	"nvim-telescope/telescope.nvim",
-	-- which-key
-	"folke/which-key.nvim",
 	-- null-ls
 	"jose-elias-alvarez/null-ls.nvim",
 	-- auto-pair
@@ -88,21 +86,21 @@ return {
 				hop.hint_char1(
 					{
 						direction = directions.AFTER_CURSOR,
-						current_line_only = true
+						current_line_only = false
 					})
 			end, { remap = true })
 			vim.keymap.set('', 'F', function()
 				hop.hint_char1(
 					{
 						direction = directions.BEFORE_CURSOR,
-						current_line_only = true
+						current_line_only = false
 					})
 			end, { remap = true })
 			vim.keymap.set('', 't', function()
 				hop.hint_char1(
 					{
 						direction = directions.AFTER_CURSOR,
-						current_line_only = true,
+						current_line_only = false,
 						hint_offset = -1
 					})
 			end, { remap = true })
@@ -110,7 +108,7 @@ return {
 				hop.hint_char1(
 					{
 						direction = directions.BEFORE_CURSOR,
-						current_line_only = true,
+						current_line_only = false,
 						hint_offset = 1
 					})
 			end, { remap = true })

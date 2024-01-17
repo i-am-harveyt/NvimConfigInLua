@@ -8,7 +8,6 @@
   - [Install](#install)
   - [Usage](#usage)
     - [Options and Setting](#options-and-setting)
-    - [Which-key](#which-key)
     - [LSP and Auto-complete](#lsp-and-auto-complete)
     - [Costumize your plugins](#costumize-your-plugins)
   - [Uninstall](#uninstall)
@@ -61,15 +60,7 @@ Here are some hint or rules when I manage files, knowing this may help you to fi
 
 2. The most basic option, such as line number, encoding, tabstop, they're in `~/.config/nvim/lua/core/opt.lua`.
 
-3. The most general keymappings like leaderkey, windows, are in `~/.config/nvim/lua/plugins/which-key.lua`, module-related keymappings are in the `~/.config/nvim/lua/modules/<module_name>.lua`.
-
-4. If you want to customize header on dashboard, goto `~/.config/nvim/lua/plugins/alpha-nvim.lua`, you'll know where to change it.
-
-### Which-key
-
-Hit the leader key (`<spc>` is default) to trigger which-key, and you can hit the key correspond to the function you want to use.
-
-For example, Save file = `<spc>fs`, `<space>` to trigger which-key, `f` stands for `file`, `s` stands for `save`.
+3. If you want to customize header on dashboard, goto `~/.config/nvim/lua/plugins/alpha-nvim.lua`, you'll know where to change it.
 
 ### LSP and Auto-complete
 
