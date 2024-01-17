@@ -53,7 +53,6 @@ end
 
 return {
 	"williamboman/mason.nvim",
-	event = "BufRead",
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",

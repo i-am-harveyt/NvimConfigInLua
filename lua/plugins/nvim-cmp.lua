@@ -37,13 +37,18 @@ local config = function()
 end
 
 return {
-	"hrsh7th/nvim-cmp",
-	event = "InsertEnter",
-	dependencies = {
-		"hrsh7th/cmp-nvim-lsp",
+	{
+		"hrsh7th/nvim-cmp",
+		-- event = "InsertEnter",
+		dependencies = {
+			"hrsh7th/cmp-nvim-lsp",
+			"L3MON4D3/LuaSnip",
+			"saadparwaiz1/cmp_luasnip",
+			"rafamadriz/friendly-snippets",
+		},
+		config = config,
+	}, {
 		"L3MON4D3/LuaSnip",
-		"saadparwaiz1/cmp_luasnip",
-		"rafamadriz/friendly-snippets",
-	},
-	config = config,
+		version = "v2.*",
+	}
 }

@@ -20,6 +20,9 @@ opt.rnu = true
 opt.clipboard = "unnamedplus"
 opt.guifont = "*"
 opt.swapfile = false
+opt.linebreak = true
+
 
 vim.keymap.set("i", "<c-l>", "<ESC>")
 
+return {}

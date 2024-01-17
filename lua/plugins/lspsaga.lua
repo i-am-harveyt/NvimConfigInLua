@@ -1,5 +1,9 @@
 local config = function()
-	require("lspsaga").setup()
+	require("lspsaga").setup({
+		ui = {
+			code_action=""
+		}
+	})
 end
 
 local wk_ok, wk = pcall(require, "which-key")
@@ -30,7 +34,7 @@ end
 
 return {
 	"glepnir/lspsaga.nvim",
-	event = "BufRead",
+	event = "LspAttach",
 	dependencies = { 'nvim-tree/nvim-web-devicons' },
 	config = config
 }

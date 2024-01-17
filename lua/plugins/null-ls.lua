@@ -13,6 +13,6 @@ end
 
 return {
 	'jose-elias-alvarez/null-ls.nvim',
-	event = "BufRead",
+	event = "InsertEnter",
 	config = config
 }

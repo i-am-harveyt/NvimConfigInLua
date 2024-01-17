@@ -1,8 +1,4 @@
 return {
-	-- my self-written
-	-- { dir = "/Users/tonghaoting/.config/nvim/lua/plugins/power.nvim" },
-	--end
-
 	-- mason & LSPs
 	"williamboman/mason.nvim",
 	-- auto complete
@@ -41,7 +37,7 @@ return {
 		ft = "markdown",
 		config = function()
 			vim.fn["mkdp#util#install"]()
-		end
+		end,
 	},
 	-- {
 	-- 	"m4xshen/hardtime.nvim",
@@ -64,8 +60,10 @@ return {
 	"nvim-lualine/lualine.nvim",
 	-- bufferline
 	"akinsho/bufferline.nvim",
-	-- notify
-	"rcarriga/nvim-notify",
+
+	-- noice.nvim
+	"folke/noice.nvim",
+
 	-- lspsaga
 	"glepnir/lspsaga.nvim",
 	-- indent line
@@ -78,13 +76,44 @@ return {
 			require("colorizer").setup()
 		end,
 	},
+	-- hop
 	{
-		'glacambre/firenvim',
-		lazy = not vim.g.started_by_firenvim,
-		module = false,
-		build = function()
-			vim.fn["firenvim#install"](0)
-		end,
-	},
-
+		'phaazon/hop.nvim',
+		branch = 'v2', -- optional but strongly recommended
+		config = function()
+			local hop = require('hop')
+			hop.setup { keys = '0123456789' }
+			local directions = require('hop.hint').HintDirection
+			vim.keymap.set('', 'f', function()
+				hop.hint_char1(
+					{
+						direction = directions.AFTER_CURSOR,
+						current_line_only = true
+					})
+			end, { remap = true })
+			vim.keymap.set('', 'F', function()
+				hop.hint_char1(
+					{
+						direction = directions.BEFORE_CURSOR,
+						current_line_only = true
+					})
+			end, { remap = true })
+			vim.keymap.set('', 't', function()
+				hop.hint_char1(
+					{
+						direction = directions.AFTER_CURSOR,
+						current_line_only = true,
+						hint_offset = -1
+					})
+			end, { remap = true })
+			vim.keymap.set('', 'T', function()
+				hop.hint_char1(
+					{
+						direction = directions.BEFORE_CURSOR,
+						current_line_only = true,
+						hint_offset = 1
+					})
+			end, { remap = true })
+		end
+	}
 }
