@@ -1,12 +1,16 @@
 local config = function()
 	local nl = require('null-ls')
-	-- local dgn = nl.builtins.diagnostics
+	local dgn = nl.builtins.diagnostics
 	local fmt = nl.builtins.formatting
 	local sources = {
+		dgn.pylint,
+		fmt.black,
+		fmt.isort,
 		fmt.prettier,
-		fmt.autopep8,
-		fmt.stylua,
 		fmt.sqlfluff,
+		fmt.stylua,
+		fmt.goimports,
+		fmt.gofumpt,
 	}
 	nl.setup({ sources = sources, })
 end

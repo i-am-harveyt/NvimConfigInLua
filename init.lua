@@ -1,6 +1,10 @@
 require("core")
 require("plugins")
 
+if vim.g.neovide then
+	vim.g.neovide_cursor_vfx_mode = "pixiedust"
+end
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
