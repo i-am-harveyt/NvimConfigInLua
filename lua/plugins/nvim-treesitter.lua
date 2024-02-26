@@ -3,8 +3,9 @@ local config = function()
 		ensure_installed = {
 			"lua",
 		},
-		sync_install = true,
+		sync_install = false,
 		auto_install = true,
+		highlight = { enable = true },
 		incremental_selection = { enable = true },
 		indent = { enable = true },
 	})
