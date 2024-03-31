@@ -2,7 +2,7 @@ local config = function()
 	require('lualine').setup({
 		options = {
 			icons_enabled = true,
-			theme = "onedark",
+			-- theme = "onedark",
 			section_separators = { left = "", right = "" },
 			component_separators = { left = "|", right = "|" },
 		}

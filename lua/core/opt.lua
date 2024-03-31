@@ -21,6 +21,7 @@ opt.clipboard = "unnamedplus"
 opt.guifont = "*"
 opt.swapfile = false
 opt.linebreak = true
+cmd 'colorscheme torte'
 
 
 vim.keymap.set("i", "<c-l>", "<ESC>")
